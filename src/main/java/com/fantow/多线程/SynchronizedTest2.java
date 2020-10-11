@@ -1,5 +1,7 @@
 package com.fantow.多线程;
 
+import java.util.concurrent.atomic.AtomicStampedReference;
+
 public class SynchronizedTest2 {
     // 当锁定的对象修改了引用时，
     public static void main(String[] args) {
@@ -36,7 +38,10 @@ public class SynchronizedTest2 {
 }
 
 class T{
+    // 所以，为了保证该类的线程安全，应该在这个锁对象上加private，或者final，保证外部不能修改这个锁的引用对象
+//    private final Object obj1 = new Object();
     public Object obj = new Object();
+
 
     public void method(){
         synchronized (obj){
