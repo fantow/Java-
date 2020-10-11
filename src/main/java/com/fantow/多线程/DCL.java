@@ -41,3 +41,18 @@ class DCL2{
         return SingleHolder.instance;
     }
 }
+
+
+// 饿汉式单例模式,饿汉式一定是线程安全的
+class SingleInstance{
+
+    private static SingleInstance instance = new SingleInstance();
+
+    private SingleInstance(){
+
+    }
+
+    public static SingleInstance getInstance(){
+        return instance;
+    }
+}
