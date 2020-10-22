@@ -11,12 +11,10 @@ public class Client {
         SocketChannel channel1 = SocketChannel.open();
         channel1.connect(new InetSocketAddress("localhost",9998));
 
-        while(true){
-            ByteBuffer buffer = ByteBuffer.allocate(1024);
+        ByteBuffer buffer = ByteBuffer.allocate(1024);
 
-            buffer.put("abc123".getBytes());
-            buffer.flip();
-            channel1.write(buffer);
-        }
+        buffer.put("abc123".getBytes());
+        buffer.flip();
+        channel1.write(buffer);
     }
 }

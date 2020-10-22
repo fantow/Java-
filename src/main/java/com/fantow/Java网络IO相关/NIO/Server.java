@@ -37,6 +37,14 @@ public class Server {
                     SocketChannel accept = server.accept();
                     accept.configureBlocking(false);
                     accept.register(selector,SelectionKey.OP_READ);
+
+                    // 这里会被阻塞，证明selector和处理逻辑的方法公用一个线程
+//                    try {
+//                        Thread.sleep(100000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+
                 }
                 if(key.isReadable()){
                     System.out.println("准备读取消息...");
@@ -48,6 +56,13 @@ public class Server {
                     while(byteBuffer.hasRemaining()){
                         System.out.println(byteBuffer.get());
                     }
+                    System.out.println("结束...");
+//                    try {
+//                        Thread.sleep(100000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+
                 }
             }
         }
