@@ -2,6 +2,7 @@ package com.fantow.Java网络IO相关.Netty;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -27,6 +28,7 @@ public class Client {
                     });
 
             ChannelFuture future = bootstrap.connect().sync();
+
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();

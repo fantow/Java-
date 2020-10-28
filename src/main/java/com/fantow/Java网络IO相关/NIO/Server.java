@@ -1,5 +1,8 @@
 package com.fantow.Java网络IO相关.NIO;
 
+import io.netty.buffer.CompositeByteBuf;
+import io.netty.buffer.Unpooled;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -71,6 +74,9 @@ public class Server {
     public static void main(String[] args) throws IOException {
         Server server = new Server();
         server.listen();
+
+        CompositeByteBuf buf = Unpooled.compositeBuffer();
+        buf.addComponent(null);
 
     }
 
