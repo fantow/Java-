@@ -13,6 +13,9 @@ public class StaticImport {
         // 静态导包所带来的好处
         Test1();
 
+        int i = 10;
+        System.out.println(i << 5);
+
     }
 }
 
