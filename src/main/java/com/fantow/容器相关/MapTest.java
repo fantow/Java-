@@ -2,6 +2,7 @@ package com.fantow.容器相关;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,8 +25,24 @@ public class MapTest {
 //            System.out.println("key:" + entry.getKey() + " : " + entry.getValue().name);
 //        }
 
-        ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>();
-        map.put("abc",null);
+//        ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>();
+//        map.put("abc",null);
+
+
+        // 添加16*0.75个元素，看它是否进行扩容
+        HashMap<String,String> map = new HashMap<>(10,0.75f);
+
+        for(int i = 0;i < 13;i++){
+            map.put(Integer.toString(i),"123");
+        }
+
+        System.out.println(map.size());
+
+        System.out.println("----");
+
+        LinkedHashMap<String,String> map1 = new LinkedHashMap<>();
+        map1.put("","");
+        map1.get("");
 
 
     }
