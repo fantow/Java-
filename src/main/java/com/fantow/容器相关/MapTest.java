@@ -1,10 +1,9 @@
 package com.fantow.容器相关;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 public class MapTest {
     public static void main(String[] args) {
@@ -28,21 +27,14 @@ public class MapTest {
 //        ConcurrentHashMap<String,String> map = new ConcurrentHashMap<>();
 //        map.put("abc",null);
 
+        TreeMap<Integer,String> map = new TreeMap<>();
+        map.put(12,null);
 
-        // 添加16*0.75个元素，看它是否进行扩容
-        HashMap<String,String> map = new HashMap<>(10,0.75f);
-
-        for(int i = 0;i < 13;i++){
-            map.put(Integer.toString(i),"123");
+        for(Map.Entry<Integer,String> entry : map.entrySet()){
+            System.out.println("key: " + entry.getKey() + " value: " + entry.getValue());
         }
 
-        System.out.println(map.size());
-
-        System.out.println("----");
-
-        LinkedHashMap<String,String> map1 = new LinkedHashMap<>();
-        map1.put("","");
-        map1.get("");
+//        ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>();
 
 
     }

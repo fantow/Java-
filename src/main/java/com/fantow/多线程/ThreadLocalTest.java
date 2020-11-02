@@ -33,6 +33,8 @@ public class ThreadLocalTest {
             }
         }).start();
 
+        Thread t1 = new Thread();
+        t1.yield();
 
     }
 }
