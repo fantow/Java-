@@ -21,6 +21,7 @@ public class CompletableFutureTest {
 
         CompletableFuture<String> future = CompletableFuture.completedFuture("abc");
 
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

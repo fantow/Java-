@@ -1,5 +1,9 @@
 package com.fantow.GC相关;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+
 // 如果类中有其他对象的引用，都失去了强引用，谁会先调用finialized?
 public class GCTest2 {
     public static void main(String[] args) throws InterruptedException {
@@ -19,6 +23,12 @@ public class GCTest2 {
             obj.wait();
         }
 
+        FutureTask task = new FutureTask(new Callable() {
+            @Override
+            public Object call() throws Exception {
+                return null;
+            }
+        });
         
 
     }
