@@ -49,5 +49,12 @@ public class ReadWriteLockTest {
             lock.unlock();
         }
 
+
+        readLock.lock();
+        readLock.unlock();
+        writeLock.lock();
+        writeLock.unlock();
+
+
     }
 }
