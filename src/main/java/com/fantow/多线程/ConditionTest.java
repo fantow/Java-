@@ -1,5 +1,6 @@
 package com.fantow.多线程;
 
+import java.util.concurrent.TransferQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -83,6 +84,7 @@ public class ConditionTest {
                 System.out.println("Thread2被唤醒了");
             }
         },"Thread2").start();
+
 
 
     }
